@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudipta & Shankhadip - Wedding Invitation</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Tiro+Bangla:ital@0;1&display=swap" rel="stylesheet">
+
+    <style>
+        /* Modern Reset and Base Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #111; 
+            text-align: center;
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+            
+            /* Premium Background Image */
+            background-image: url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=2070&auto=format&fit=crop'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        
+        @media (max-width: 600px) {
+            body { background-attachment: scroll; }
+        }
+
+        /* Top Controls: Left and Right positioning */
+        .top-controls-left {
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            z-index: 10;
+        }
+
+        .top-controls-right {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            z-index: 10;
+        }
+
+        /* Shared Button Style for Top Controls */
+        .control-btn {
+            background: rgba(191, 161, 95, 0.15);
+            border: 2px solid #bfa15f;
+            color: #a88b4d;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 0.9em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .control-btn:hover {
+            background: #bfa15f;
+            color: #fff;
+        }
+
+        /* --- MODERN PREMIUM GLASS EFFECT --- */
+        .card-container {
+            max-width: 850px; 
+            margin: 80px auto;
+            padding: 90px 40px 80px 40px; 
+            position: relative;
+            border-radius: 20px;
+            background-color: rgba(255, 255, 255, 0.85); 
+            -webkit-backdrop-filter: blur(15px); 
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        /* English Typography */
+        .lang-en .serif-text { font-family: 'Playfair Display', serif; }
+        
+        /* MASSIVE INDEPENDENT NAMES (ENGLISH) */
+        .name-en {
+            font-family: 'Great Vibes', cursive; 
+            font-size: 7.5rem; 
+            font-weight: 500; 
+            color: #bfa15f;
+            line-height: 1.1;
+            text-shadow: 2px 3px 6px rgba(0,0,0,0.15);
+        }
+        
+        /* Bengali Typography */
+        .lang-bn .serif-text { font-family: 'Tiro Bangla', serif; }
+        
+        /* MASSIVE INDEPENDENT NAMES (BENGALI) */
+        .name-bn {
+            font-family: 'Tiro Bangla', serif; 
+            font-size: 4.8rem; 
+            font-weight: 700; 
+            color: #bfa15f;
+            line-height: 1.3;
+            text-shadow: 2px 3px 6px rgba(0,0,0,0.15);
+        }
+
+        /* Connecting Text (weds / শুভ পরিণয়) */
+        .connector-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: #777;
+            margin: 15px 0;
+            display: block;
+            font-style: italic;
+            letter-spacing: 2px;
+        }
+        
+        .lang-bn .connector-text { 
+            font-family: 'Tiro Bangla', serif; 
+            font-size: 2.2rem; 
+            color: #777;
+            font-style: normal;
+            letter-spacing: normal;
+        }
+
+        .om-text {
+            font-family: 'Tiro Bangla', serif;
+            font-size: 1.6em; 
+            font-weight: bold;
+            color: #bfa15f;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .intro-text {
+            font-size: 1.1em; 
+            color: #444;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            font-weight: 600; 
+        }
+        
+        .lang-bn .intro-text { font-size: 1.3em; letter-spacing: 1px; font-weight: 700; }
+
+        .parents-names {
+            font-size: 1.4em; 
+            color: #222;
+            margin-bottom: 40px;
+            line-height: 1.8;
+            font-style: italic;
+            font-weight: 500; 
+        }
+        
+        .lang-bn .parents-names { font-style: normal; font-size: 1.55em; font-weight: 600; }
+
+        .couple-names {
+            margin: 50px 0;
+        }
+
+        /* Event Details */
+        .event-details {
+            margin: 50px 0;
+            padding: 50px 0;
+            border-top: 2px solid rgba(191, 161, 95, 0.2);
+            border-bottom: 2px solid rgba(191, 161, 95, 0.2);
+        }
+
+        .date {
+            font-size: 2.3em; 
+            color: #111;
+            margin-bottom: 20px;
+            font-weight: 700; 
+        }
+        
+        .lang-bn .date { font-size: 2.4em; }
+
+        .venue-name {
+            font-size: 1.6em; 
+            font-weight: 700;
+            color: #111;
+            margin: 20px 0 5px 0;
+            letter-spacing: 1px;
+        }
+
+        .venue-location {
+            font-size: 1.1em; 
+            color: #333;
+            margin-bottom: 35px;
+            font-weight: 500;
+            line-height: 1.5;
+        }
+        
+        .lang-bn .venue-location { font-family: 'Tiro Bangla', serif; font-size: 1.25em; font-weight: 600; }
+
+        /* Google Maps Button */
+        .map-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background-color: #bfa15f;
+            color: #fff;
+            padding: 16px 36px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-size: 1.05em; 
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(191, 161, 95, 0.4);
+        }
+
+        .lang-bn .map-btn { font-family: 'Tiro Bangla', serif; letter-spacing: 1px; font-size: 1.2em; }
+
+        .map-btn:hover {
+            background-color: #a88b4d;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(191, 161, 95, 0.5);
+        }
+
+        .map-btn svg { width: 20px; height: 20px; fill: currentColor; }
+
+        /* Refined Countdown Timer - Glass Style */
+        .countdown-container {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin: 45px 0;
+        }
+
+        .time-box {
+            background-color: rgba(255, 255, 255, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(5px);
+            border-radius: 12px;
+            padding: 25px 20px;
+            min-width: 100px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .time-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.2em; 
+            color: #bfa15f;
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .time-label {
+            font-size: 1em; 
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #444;
+            font-weight: 700;
+        }
+        
+        .lang-bn .time-label { font-family: 'Tiro Bangla', serif; letter-spacing: 1px; font-size: 1.2em; text-transform: none; }
+
+        .footer {
+            margin-top: 50px;
+            font-size: 1.3em; 
+            color: #333;
+            font-style: italic;
+            font-weight: 500;
+        }
+        
+        .lang-bn .footer { font-style: normal; font-size: 1.45em; font-weight: 600; }
+
+        /* Scroll Animation Classes */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+            will-change: opacity, transform;
+        }
+
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Language Hiding Utility - ENGLISH HIDDEN BY DEFAULT */
+        .lang-en { display: none; } 
+
+        /* Mobile Responsiveness */
+        @media (max-width: 600px) {
+            .card-container { margin: 40px 15px; padding: 75px 15px 50px 15px; border-radius: 15px; }
+            
+            /* Responsive Top Controls */
+            .top-controls-left { top: 15px; left: 15px; }
+            .top-controls-right { top: 15px; right: 15px; }
+            .control-btn { padding: 6px 12px; font-size: 0.8em; }
+
+            /* Mobile Specific Name Sizes */
+            .name-en { font-size: 4.5rem !important; }
+            .name-bn { font-size: 3.2rem !important; }
+            .connector-text { font-size: 1.5rem !important; margin: 10px 0;}
+            
+            .countdown-container { gap: 10px; flex-wrap: wrap; }
+            .time-box { min-width: 45%; padding: 15px 10px; margin-bottom: 10px;}
+            .time-number { font-size: 2.5em; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card-container">
+        
+        <div class="top-controls-left">
+            <button class="control-btn" id="music-btn">
+                <span id="music-icon">🎵</span> 
+                <span id="music-text-en" class="lang-en">Play Music</span>
+                <span id="music-text-bn" class="lang-bn" style="font-family: 'Tiro Bangla', serif;">গান চালান</span>
+            </button>
+        </div>
+            
+        <div class="top-controls-right">
+            <button class="control-btn" id="lang-switch" onclick="toggleLanguage()">View English</button>
+        </div>
+
+        <div class="lang-bn om-text animate-on-scroll">॥ ওঁ শ্রীশ্রীপ্রজাপতয়ে নমঃ ॥</div>
+        
+        <div class="intro-text animate-on-scroll">
+            <span class="lang-en">Joyfully request the pleasure of your company</span>
+            <span class="lang-bn serif-text">আমাদের একমাত্র কন্যার শুভ পরিণয় উপলক্ষে</span>
+        </div>
+        
+        <div class="parents-names animate-on-scroll">
+            <span class="lang-en serif-text">
+                Mr. Jayanta Ranjan Halder & Mrs. Sima Halder
+            </span>
+            <span class="lang-bn serif-text">
+                শ্রী জয়ন্ত রঞ্জন হালদার ও শ্রীমতী সীমা হালদার
+            </span>
+        </div>
+
+        <div class="intro-text animate-on-scroll">
+            <span class="lang-en">at the marriage of our only daughter</span>
+            <span class="lang-bn serif-text">আপনাদের উপস্থিতি ও আশীর্বাদ একান্ত কাম্য</span>
+        </div>
+
+        <div class="couple-names animate-on-scroll">
+            <div class="lang-en">
+                <div class="name-en">Sudipta</div>
+                <div class="connector-text">weds</div>
+                <div class="name-en">Shankhadip</div>
+            </div>
+            <div class="lang-bn">
+                <div class="name-bn">আয়ুষ্মতী সুদীপ্তা</div>
+                <div class="connector-text">শুভ পরিণয়</div>
+                <div class="name-bn">আয়ুষ্মান শঙ্খদীপ</div>
+            </div>
+        </div>
+
+        <div class="event-details animate-on-scroll">
+            <div class="date">
+                <span class="lang-en serif-text">Monday, July 20th, 2026</span>
+                <span class="lang-bn serif-text">২০শে জুলাই ২০২৬, সোমবার</span>
+            </div>
+            
+            <div class="countdown-container">
+                <div class="time-box">
+                    <span class="time-number" id="days">00</span>
+                    <span class="time-label">
+                        <span class="lang-en">Days</span>
+                        <span class="lang-bn">দিন</span>
+                    </span>
+                </div>
+                <div class="time-box">
+                    <span class="time-number" id="hours">00</span>
+                    <span class="time-label">
+                        <span class="lang-en">Hours</span>
+                        <span class="lang-bn">ঘণ্টা</span>
+                    </span>
+                </div>
+                <div class="time-box">
+                    <span class="time-number" id="minutes">00</span>
+                    <span class="time-label">
+                        <span class="lang-en">Mins</span>
+                        <span class="lang-bn">মিনিট</span>
+                    </span>
+                </div>
+                <div class="time-box">
+                    <span class="time-number" id="seconds">00</span>
+                    <span class="time-label">
+                        <span class="lang-en">Secs</span>
+                        <span class="lang-bn">সেকেন্ড</span>
+                    </span>
+                </div>
+            </div>
+
+            <p class="venue-name">
+                <span class="lang-en"><strong>Mitrangan</strong></span>
+                <span class="lang-bn serif-text"><strong>মিত্রাঙ্গন</strong></span>
+            </p>
+            <p class="venue-location">
+                <span class="lang-en">Dr. Norman Bethune Sarani Rd, Salepur, Baruipur,<br>Salipur P, West Bengal 700144</span>
+                <span class="lang-bn">ডাঃ নরম্যান বেথুন সরণি রোড, সালেপুর, বারুইপুর,<br>সালেপুর পি, পশ্চিমবঙ্গ ৭০০১৪৪</span>
+            </p>
+            
+            <a href="https://www.google.com/maps/place/Mitrangan/@22.3727949,88.4275768,18.5z/data=!4m6!3m5!1s0x3a026d09bba037f1:0xe3b844f49d09dc4e!8m2!3d22.3728702!4d88.4285501!16s%2Fg%2F11f5q87pg2?authuser=0&entry=ttu&g_ep=EgoyMDI2MDMxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="map-btn">
+                <svg viewBox="0 0 384 512">
+                    <path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/>
+                </svg>
+                <span class="lang-en">Get Directions</span>
+                <span class="lang-bn">দিকনির্দেশ</span>
+            </a>
+        </div>
+
+        <div class="footer animate-on-scroll">
+            <span class="lang-en serif-text">We look forward to celebrating this special day with you!</span>
+            <span class="lang-bn serif-text">আপনাদের উপস্থিতি আমাদের আনন্দকে আরও বাড়িয়ে তুলবে।</span>
+        </div>
+
+    </div>
+
+    <audio id="bg-music" loop>
+        <source src="wedding-music-শুভ-পরিণয়.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        // --- Language Toggle Logic ---
+        let currentLang = 'bn'; // Defaults to Bengali
+        function toggleLanguage() {
+            const enElements = document.querySelectorAll('.lang-en');
+            const bnElements = document.querySelectorAll('.lang-bn');
+            const toggleBtn = document.getElementById('lang-switch');
+
+            if (currentLang === 'bn') {
+                bnElements.forEach(el => el.style.display = 'none');
+                enElements.forEach(el => el.style.display = 'inline-block'); 
+                toggleBtn.innerText = 'বাংলা দেখুন';
+                currentLang = 'en';
+            } else {
+                enElements.forEach(el => el.style.display = 'none');
+                bnElements.forEach(el => el.style.display = 'inline-block');
+                toggleBtn.innerText = 'View English';
+                currentLang = 'bn';
+            }
+            updateMusicButtonText();
+        }
+
+        // --- Intersection Observer for Scroll Animations ---
+        const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target); 
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach((element) => {
+            observer.observe(element);
+        });
+
+        // --- Countdown Timer Logic ---
+        const countDownDate = new Date("Jul 20, 2026 15:00:00").getTime();
+        const x = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countDownDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerHTML = days;
+            document.getElementById("hours").innerHTML = hours < 10 ? "0" + hours : hours;
+            document.getElementById("minutes").innerHTML = minutes < 10 ? "0" + minutes : minutes;
+            document.getElementById("seconds").innerHTML = seconds < 10 ? "0" + seconds : seconds;
+
+            if (distance < 0) {
+                clearInterval(x);
+                document.querySelector(".countdown-container").innerHTML = "<div style='font-family: Playfair Display; font-size: 2.2em; color: #bfa15f; font-weight: 700;'>Today is the Day!</div>";
+            }
+        }, 1000);
+
+        // --- HTML5 Audio Music Player Logic (Autoplay Workaround & Hard Loop) ---
+        const music = document.getElementById("bg-music");
+        const musicBtn = document.getElementById("music-btn");
+        let isPlaying = false;
+
+        // Force loop via JavaScript (Catches strict mobile browsers)
+        music.loop = true;
+        music.addEventListener('ended', function() {
+            this.currentTime = 0;
+            this.play();
+        }, false);
+
+        function updateMusicButtonText() {
+            const icon = isPlaying ? "⏸️" : "🎵";
+            document.getElementById("music-icon").innerText = icon;
+            
+            if (isPlaying) {
+                document.getElementById("music-text-en").innerText = "Pause Music";
+                document.getElementById("music-text-bn").innerText = "গান থামান";
+            } else {
+                document.getElementById("music-text-en").innerText = "Play Music";
+                document.getElementById("music-text-bn").innerText = "গান চালান";
+            }
+        }
+
+        // Try to play immediately when the page loads
+        window.addEventListener('DOMContentLoaded', () => {
+            let playPromise = music.play();
+            
+            if (playPromise !== undefined) {
+                playPromise.then(_ => {
+                    // Autoplay started successfully
+                    isPlaying = true;
+                    updateMusicButtonText();
+                }).catch(error => {
+                    // Autoplay was blocked by the browser. 
+                    // Add a one-time listener to start music on the user's first click anywhere on the page.
+                    isPlaying = false;
+                    updateMusicButtonText();
+                    
+                    document.body.addEventListener('click', function startMusic() {
+                        if (!isPlaying) {
+                            music.play();
+                            isPlaying = true;
+                            updateMusicButtonText();
+                        }
+                        // Remove the listener so it doesn't keep firing
+                        document.body.removeEventListener('click', startMusic);
+                    }, { once: true });
+                });
+            }
+        });
+
+        // Manual play/pause button toggle
+        musicBtn.addEventListener("click", function(event) {
+            event.stopPropagation(); // Stop the manual click from triggering the body background click
+            if (isPlaying) {
+                music.pause();
+            } else {
+                music.play();
+            }
+            isPlaying = !isPlaying;
+            updateMusicButtonText();
+        });
+    </script>
+
+</body>
+</html>
